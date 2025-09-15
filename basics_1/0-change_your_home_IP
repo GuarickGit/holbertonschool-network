@@ -3,7 +3,7 @@
 # - localhost resolves to 127.0.0.2
 # - facebook.com resolves to 8.8.8.8
 
-sudo cat <<EOF > /etc/hosts
+cat <<EOF | sudo tee /etc/hosts > /dev/null
 127.0.0.1   ubuntu
 127.0.0.2   localhost
 8.8.8.8     facebook.com
