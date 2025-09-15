@@ -1,4 +1,12 @@
 #!/usr/bin/env bash
 # Script that displays all active IPv4 IPs on the machine it’s executed on
 
+# La commande ifconfig liste toutes les interfaces réseau de la machine
+# On filtre ensuite avec grep :
+#   - l’option -o affiche uniquement la partie qui correspond à l’expression régulière
+#   - l’option -P active les regex de type Perl (qui permettent d’utiliser les lookbehind)
+# L’expression '(?<=inet\s)\d+(\.\d+){3}' signifie :
+#   - (?<=inet\s) : cherche seulement ce qui est précédé de "inet " (avec un espace)
+#   - \d+(\.\d+){3} : correspond à une suite de chiffres de type adresse IPv4 (ex: 192.168.0.1)
+# Résultat : on récupère uniquement les adresses IPv4 actives, une par ligne
 ifconfig | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
