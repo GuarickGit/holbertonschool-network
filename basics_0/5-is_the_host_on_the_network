@@ -1,11 +1,20 @@
 #!/usr/bin/env bash
 # Bash script that pings an IP address passed as an argument
+
+# Vérifie si un argument a été passé au script
+# "$#" contient le nombre d’arguments passés en ligne de commande
 if [ $# -eq 0 ];
 	then
+		# Si aucun argument, on affiche un message d’utilisation
+		# "$0" contient le nom du script, ici on écrit en dur comme demandé
 		echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
-		exit 1
+		exit 1 # Quitte le script avec un code d’erreur (1)
 	fi
 
+	# Stocke le premier argument dans une variable
+	# "$1" = le premier argument passé (l’adresse IP à ping)
 	IP_ADDRESS="$1"
 
+	# Exécute la commande ping 5 fois sur l’adresse passée en argument
+	# -c 5 = option qui limite le nombre de paquets envoyés à 5
 	ping -c 5 "$IP_ADDRESS"
