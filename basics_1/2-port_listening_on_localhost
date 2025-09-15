@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Script Bash qui écoute sur le port 98 de localhost et affiche les messages reçus
+
+# La commande 'nc' (netcat) permet d'ouvrir des connexions réseau
+# -l : met nc en mode "listen" (écoute)
+# -p 98 : définit le port d'écoute sur 98
+# Tout ce qui est reçu sur ce port est affiché dans le terminal
+nc -l -p 98
