@@ -1,5 +1,3 @@
-https://www.linkedin.com/pulse/what-happens-when-you-type-httpswwwgooglecom-your-browser-fresne-wujge
-
 # What Happens When You Type https://www.google.com in Your Browser?
 
 This is a classic interview question, and for good reason: it touches almost every layer of the modern web stack. From networking to security to servers and databases, the path your request takes is a fascinating journey. Let’s walk through it step by step.
